@@ -1,0 +1,9 @@
+This commit integrates Clerk.js for authentication.  Key changes include:
+
+* **Authentication:** Added Clerk.js for user authentication and authorization.  The app now redirects unauthenticated users to a sign-in page.
+
+* **UI Updates:**  The header now includes a Clerk user button for user management (sign in/out, profile).
+
+* **Code Structure:** The `layout.tsx` file now wraps the entire app within a `ClerkProvider`, and conditional rendering based on authentication status has been added to several components.  The `page.tsx` file now logs whether a user is logged in or not.
+
+In short, the app now has user authentication and authorization managed by Clerk.js, affecting the user interface and overall application flow.
