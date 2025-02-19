@@ -1,9 +1,7 @@
-This commit integrates Clerk.js for authentication.  Key changes include:
+This commit integrates Clerk.js for user authentication.  Key changes include:
 
-* **Added Clerk.js:** The `@clerk/nextjs` package was added for user authentication and authorization.  ClerkProvider wraps the entire application.
+* **Code Structure:**  The `layout.tsx` file now wraps the application's content within a `<ClerkProvider>`, enabling Clerk's authentication context.  The `header.tsx` component now includes a Clerk `<UserButton>`.
 
-* **Authentication Logic:**  The `RootLayout` now redirects unauthenticated users to the `/sign-in` page.  A simple check for userId is implemented.  The `Home` component logs whether a user is logged in or not, which suggests that further features will depend on authentication status.
+* **Logic:** Authentication is enforced in `layout.tsx`; if a user is not authenticated, they are redirected to `/sign-in`.  `page.tsx` now logs whether a user is logged in or out using the Clerk authentication context.
 
-* **UI Changes:**  The header now includes a Clerk UserButton for user account management instead of a placeholder.
-
-No significant changes were made to the core application logic or data structures beyond the addition of authentication.
+* **Functionality:**  The application now has user authentication and authorization via Clerk.js, providing a user button in the header.
